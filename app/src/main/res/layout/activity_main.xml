@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#F5F5DC">
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/password_auto_generate"
+        android:textAlignment="center"
+        android:padding="30dp"
+        android:background="@color/black"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+    </TextView>
+
+    <TextView
+        android:id="@+id/textPassword"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        android:hint="@string/aguardando_nova_senha"
+        android:padding="20dp"
+        android:textAlignment="center"
+        android:textFontWeight="medium"
+        android:elevation="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle"></TextView>
+
+    <TextView
+        android:id="@+id/textLength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password length"
+        app:layout_constraintTop_toBottomOf="@+id/textPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="30dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/textLengthQtd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/minQuatro"
+        app:layout_constraintBaseline_toBaselineOf="@id/textLength"
+        app:layout_constraintStart_toEndOf="@id/textLength"
+        android:layout_marginLeft="210dp">
+    </TextView>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#B0B0B0"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:showDividers="middle"
+        app:layout_constraintBottom_toTopOf="@id/buttonSave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textLength"
+        app:layout_constraintVertical_bias="0.0">
+
+        <SeekBar
+            android:id="@+id/seekBarLength"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="20"
+            android:padding="16dp"
+            android:progress="4" />
+
+        <Switch
+            android:id="@+id/switchLetter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="@string/use_letters" />
+
+        <Switch
+            android:id="@+id/switchNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+
+            android:text="@string/use_numbers" />
+
+        <Switch
+            android:id="@+id/switchCapital"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="@string/use_capital" />
+
+        <Switch
+            android:id="@+id/switchSpecialC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="@string/use_special_characters" />
+
+        <Switch
+            android:id="@+id/switchEmoji"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="@string/use_emoji" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="84dp"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:text="@string/save_password"
+        android:textStyle="bold"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.477"
+        app:layout_constraintStart_toStartOf="parent"></Button>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButtonRefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:srcCompat="@drawable/refresh"
+        tools:layout_editor_absoluteX="297dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
