@@ -2,15 +2,14 @@ package com.example.passwordgeneration
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.SeekBar
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.io.File
 import java.io.FileOutputStream
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         val textLengthQtd = findViewById<TextView>(R.id.textLengthQtd)
         val seekBar = findViewById<SeekBar>(R.id.seekBarLength)
         val buttonSave = findViewById<Button>(R.id.buttonSave)
+        val buttonRefresh = findViewById<ImageButton>(R.id.buttonRefresh)
+        val buttonCopy = findViewById<ImageButton>(R.id.buttonCopy)
 
         val switches = listOf(
             findViewById<Switch>(R.id.switchLetter) to "abcdefghijklmnopqrstuvwxyz",
@@ -42,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         // Gera senha ao clicar no botão Refresh
-        findViewById<FloatingActionButton>(R.id.floatingActionButtonRefresh).setOnClickListener {
+        buttonRefresh.setOnClickListener {
             textPassword.text = generatePassword(seekBar.progress, switches)
         }
 

@@ -27,14 +27,15 @@
         android:id="@+id/textPassword"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="20dp"
         android:background="@color/white"
+        android:elevation="100dp"
         android:hint="@string/aguardando_nova_senha"
         android:padding="20dp"
         android:textAlignment="center"
-        android:textFontWeight="medium"
-        android:elevation="100dp"
+        android:shadowRadius="34dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textTitle"></TextView>
 
@@ -45,8 +46,8 @@
         android:text="Password length"
         app:layout_constraintTop_toBottomOf="@+id/textPassword"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="30dp">
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="35dp">
     </TextView>
 
     <TextView
@@ -58,7 +59,6 @@
         app:layout_constraintStart_toEndOf="@id/textLength"
         android:layout_marginLeft="210dp">
     </TextView>
-
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -80,7 +80,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:max="20"
-            android:padding="16dp"
+            android:paddingBottom="16dp"
             android:progress="4" />
 
         <Switch
@@ -126,23 +126,36 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="84dp"
-        android:background="@color/white"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/black"
         android:padding="10dp"
         android:text="@string/save_password"
         android:textStyle="bold"
-        app:cornerRadius="8dp"
+        app:cornerRadius="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent"></Button>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButtonRefresh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
+    <ImageButton
+        android:id="@+id/buttonRefresh"
+        android:layout_width="29dp"
+        android:layout_height="21dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textTitle"
+        android:layout_marginTop="20dp"
         app:srcCompat="@drawable/refresh"
-        tools:layout_editor_absoluteX="297dp"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteX="16dp" />
+
+    <ImageButton
+        android:id="@+id/buttonCopy"
+        android:layout_width="29dp"
+        android:layout_height="21dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/copy"
+        tools:layout_editor_absoluteX="3210dp"
+        tools:layout_editor_absoluteY="280dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
