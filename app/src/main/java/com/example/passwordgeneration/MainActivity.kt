@@ -29,8 +29,8 @@ class MainActivity : AppCompatActivity() {
             findViewById<Switch>(R.id.switchLetter) to "abcdefghijklmnopqrstuvwxyz",
             findViewById<Switch>(R.id.switchNumber) to "0123456789",
             findViewById<Switch>(R.id.switchCapital) to "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-            findViewById<Switch>(R.id.switchSpecialC) to "!@#/$%&*?+-_=<>,.;:()[]{}´`'|",
-            findViewById<Switch>(R.id.switchEmoji) to "😀😁😂🤣😎😍😡👍🔥✨"
+            findViewById<Switch>(R.id.switchSpecialC) to "!@#/$%&*?+-_=<>,.;:()[]{}´`'|^~°¨§€£¥©®™✓✔✘✖★☆♠♥♦♣♤♡◇♧↑↓←→∞µ¶•◘○◙♂♀♪♫☼►◄↕‼¶¿¡",
+            findViewById<Switch>(R.id.switchEmoji) to "😀😁😂🤣😅😊😍😘😎🤩🥳😡😭😴😇🤔🙄😱😜🤪😷🤯😈👻👽🤖🎃🐶🐱🐭🐹🐰🦊🐻🐼🐨🐯🦁🐮🐷🐸🐵🐔🐧🐦🐤🐺🐢🐍🦖🐬🐳🐟🦋🌸🌹🌻🌼🌷🌱🌲🌳🌴🌵🍀🍁🍂🍃🍇🍉🍌🍎🍊🍓🍒🍍🥝🥥🥑🍔🍟🍕🌭🍿🥓🥩🍗🍖🍞🥐🥖🧀🥚🍳🍩🍪🎂🍰🍫🍬🍭🍮🍯☕🍵🍺🍻🥂🍷🥃🍸🍹🍾🥤🥛🚗🚕🚙🚌🚎🏎️🚓🚑🚒🚐🚚🚛🚜✈️🚀🛸🚁🚂🚆🚊⛵⚓🚤🛶🚲🛴🏍️🛵🎲🎮🎯🏀⚽⚾🎾🏐🏉🎱🥊🥋🎸🎹🥁🎺🎷🎻🎤🎧🎼🎶🎵"
         )
 
         // Atualiza contador ao mover SeekBar
@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
             val password = textPassword.text.toString()
             if (password.isNotBlank() && password != "Selecione parâmetros!") {
                 savePasswordToFile(password)
-                val caminho = "/storage/emulated/0/Download/arquivo.txt"
+                val caminho = "/storage/Download/Senhas/senha.txt"
                 Toast.makeText(this, "Arquivo salvo em: " + caminho, Toast.LENGTH_LONG).show()
             } else {
                 Toast.makeText(this, "Nenhuma senha para salvar!", Toast.LENGTH_SHORT).show()
@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
             val size = length.coerceAtLeast(4)
             return if (pool.isNotEmpty()) {
                 (1..size).map { pool.random() }.joinToString("")
-            } else "Selecione parâmetros!"
+            } else "Selecione parâmetros antes de gerar senha!"
         }
 
 

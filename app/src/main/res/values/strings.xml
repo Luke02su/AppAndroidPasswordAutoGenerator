@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Password Auto Generate</string>
+    <string name="app_name">Password Generator</string>
     <string name="save_password">SAVE PASSWORD</string>
     <string name="use_letters">Use letters</string>
     <string name="use_numbers">Use numbers</string>
@@ -7,7 +7,7 @@
     <string name="use_special_characters">Use special characters</string>
     <string name="use_emoji">Use emoji</string>
     <string name="password_length">Password length</string>
-    <string name="password_auto_generate">Password Auto Generate</string>
+    <string name="password_auto_generator">Password Auto Generator 🔐</string>
     <string name="minQuatro">4</string>
     <string name="aguardando_nova_senha">Aguardando nova senha...</string>
 </resources>

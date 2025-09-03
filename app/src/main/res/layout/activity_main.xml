@@ -13,7 +13,7 @@
         android:id="@+id/textTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/password_auto_generate"
+        android:text="@string/password_auto_generator"
         android:textAlignment="textStart"
         android:padding="30dp"
         android:background="@color/black"
@@ -90,7 +90,9 @@
             android:max="20"
             android:paddingBottom="22dp"
             android:progress="4"
-            android:progressTint="@color/black" />
+            android:progressTint="#5D4037"
+            android:progressBackgroundTint="#F5F5DC"
+            android:thumbTint="#3E2723"/>
 
         <Switch
             android:id="@+id/switchLetter"
