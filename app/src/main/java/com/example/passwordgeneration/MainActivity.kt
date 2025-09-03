@@ -29,8 +29,8 @@ class MainActivity : AppCompatActivity() {
             findViewById<Switch>(R.id.switchLetter) to "abcdefghijklmnopqrstuvwxyz",
             findViewById<Switch>(R.id.switchNumber) to "0123456789",
             findViewById<Switch>(R.id.switchCapital) to "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-            findViewById<Switch>(R.id.switchSpecialC) to "!@#/$%&*?+-_=<>,.;:()[]{}´`'|^~°¨§€£¥©®™✓✔✘✖★☆♠♥♦♣♤♡◇♧↑↓←→∞µ¶•◘○◙♂♀♪♫☼►◄↕‼¶¿¡",
-            findViewById<Switch>(R.id.switchEmoji) to "😀😁😂🤣😅😊😍😘😎🤩🥳😡😭😴😇🤔🙄😱😜🤪😷🤯😈👻👽🤖🎃🐶🐱🐭🐹🐰🦊🐻🐼🐨🐯🦁🐮🐷🐸🐵🐔🐧🐦🐤🐺🐢🐍🦖🐬🐳🐟🦋🌸🌹🌻🌼🌷🌱🌲🌳🌴🌵🍀🍁🍂🍃🍇🍉🍌🍎🍊🍓🍒🍍🥝🥥🥑🍔🍟🍕🌭🍿🥓🥩🍗🍖🍞🥐🥖🧀🥚🍳🍩🍪🎂🍰🍫🍬🍭🍮🍯☕🍵🍺🍻🥂🍷🥃🍸🍹🍾🥤🥛🚗🚕🚙🚌🚎🏎️🚓🚑🚒🚐🚚🚛🚜✈️🚀🛸🚁🚂🚆🚊⛵⚓🚤🛶🚲🛴🏍️🛵🎲🎮🎯🏀⚽⚾🎾🏐🏉🎱🥊🥋🎸🎹🥁🎺🎷🎻🎤🎧🎼🎶🎵"
+            findViewById<Switch>(R.id.switchSpecialC) to "!@#/$%&*?+-_=<>,.;:()[]{}´`'|^~°¨¶¿¡",
+            findViewById<Switch>(R.id.switchEmoji) to "😀😁😂🤣😅😊😍😘😎🤩🥳😡😭😴😇🤔🙄😱😜🤪"
         )
 
         // Atualiza contador ao mover SeekBar
