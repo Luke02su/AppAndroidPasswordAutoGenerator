@@ -7,6 +7,7 @@ import android.widget.SeekBar
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import java.io.File
 import java.io.FileOutputStream
@@ -14,6 +15,7 @@ import java.io.FileOutputStream
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
         val textPassword = findViewById<TextView>(R.id.textPassword)
@@ -34,9 +36,14 @@ class MainActivity : AppCompatActivity() {
         // Atualiza contador ao mover SeekBar
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(sb: SeekBar?, progress: Int, fromUser: Boolean) {
-                val length = progress.coerceAtLeast(4) // força mínimo de 4
+                val length = progress.coerceAtLeast(4)
                 textLengthQtd.text = length.toString()
+
+                if (length != progress) {
+                    sb?.progress = length
+                }
             }
+
             override fun onStartTrackingTouch(sb: SeekBar?) {}
             override fun onStopTrackingTouch(sb: SeekBar?) {}
         })
@@ -72,14 +79,19 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Função para gerar senha
-    private fun generatePassword(length: Int, switches: List<Pair<Switch, String>>): String {
-        val pool = switches.filter { it.first.isChecked }.joinToString("") { it.second }
-        val size = length.coerceAtLeast(4)
-        return if (pool.isNotEmpty()) {
-            (1..size).map { pool.random() }.joinToString("")
-        } else "Selecione parâmetros!"
-    }
+    // Função para gerar senha (corrigida para emojis)
+        private fun generatePassword(length: Int, switches: List<Pair<Switch, String>>): String {
+            val pool = switches.filter { it.first.isChecked }
+                .flatMap { (_, chars) ->
+                    chars.codePoints().toArray().map { cp -> String(Character.toChars(cp)) }
+                }
+
+            val size = length.coerceAtLeast(4)
+            return if (pool.isNotEmpty()) {
+                (1..size).map { pool.random() }.joinToString("")
+            } else "Selecione parâmetros!"
+        }
+
 
     // Função para salvar senha em arquivo interno
     private fun savePasswordToFile(password: String) {
