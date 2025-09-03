@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PasswordGeneration</string>
+    <string name="app_name">Password Auto Generate</string>
     <string name="save_password">SAVE PASSWORD</string>
     <string name="use_letters">Use letters</string>
     <string name="use_numbers">Use numbers</string>

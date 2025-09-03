@@ -19,6 +19,7 @@
         android:background="@color/black"
         android:textColor="@color/white"
         android:textStyle="bold"
+        android:textSize="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
@@ -30,9 +31,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:elevation="10dp"
+        android:textColorHint="@color/black"
         android:hint="@string/aguardando_nova_senha"
+        android:textColor="@color/black"
         android:padding="20dp"
         android:textAlignment="center"
+        android:textStyle="normal"
         android:background="@drawable/txt_password_border"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -44,6 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password length"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/textPassword"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="20dp"
@@ -55,6 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/minQuatro"
+        android:textColor="@color/black"
         app:layout_constraintBaseline_toBaselineOf="@id/textLength"
         app:layout_constraintStart_toEndOf="@id/textLength"
         android:layout_marginLeft="210dp">
@@ -81,6 +87,8 @@
             android:layout_height="wrap_content"
             android:max="20"
             android:paddingBottom="16dp"
+            android:backgroundTint="@color/black"
+            android:progressTint="@color/black"
             android:progress="4" />
 
         <Switch
@@ -88,6 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
+            android:textColor="@color/black"
             android:text="@string/use_letters" />
 
         <Switch
@@ -95,7 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
-
+            android:textColor="@color/black"
             android:text="@string/use_numbers" />
 
         <Switch
@@ -103,6 +112,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
+            android:textColor="@color/black"
             android:text="@string/use_capital" />
 
         <Switch
@@ -110,6 +120,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
+            android:textColor="@color/black"
             android:text="@string/use_special_characters" />
 
         <Switch
@@ -117,6 +128,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
+            android:textColor="@color/black"
             android:text="@string/use_emoji" />
 
     </LinearLayout>
@@ -140,11 +152,11 @@
     <ImageButton
         android:id="@+id/buttonRefresh"
         android:layout_width="30dp"
-        android:layout_height="22dp"
+        android:layout_height="24dp"
         android:background="@null"
         android:scaleType="fitCenter"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="95dp"
+        android:layout_marginEnd="78dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/refresh" />
@@ -152,7 +164,7 @@
     <ImageButton
         android:id="@+id/buttonCopy"
         android:layout_width="30dp"
-        android:layout_height="40dp"
+        android:layout_height="30dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
         android:background="@null"
