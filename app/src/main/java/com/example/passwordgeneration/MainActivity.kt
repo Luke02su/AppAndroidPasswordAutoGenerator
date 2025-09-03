@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             findViewById<Switch>(R.id.switchLetter) to "abcdefghijklmnopqrstuvwxyz",
             findViewById<Switch>(R.id.switchNumber) to "0123456789",
             findViewById<Switch>(R.id.switchCapital) to "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-            findViewById<Switch>(R.id.switchSpecialC) to "!@#\$%&*?+-_=<>",
+            findViewById<Switch>(R.id.switchSpecialC) to "!@#/$%&*?+-_=<>,.;:()[]{}´`'|",
             findViewById<Switch>(R.id.switchEmoji) to "😀😁😂🤣😎😍😡👍🔥✨"
         )
 
@@ -47,7 +47,20 @@ class MainActivity : AppCompatActivity() {
             textPassword.text = generatePassword(seekBar.progress, switches)
         }
 
-        // Salva senha em arquivo ao clicar em "Salvar"
+        // Copia a senha para área de transferência ao clicar no botão Copy
+        buttonCopy.setOnClickListener {
+            val password = textPassword.text.toString()
+            if (password.isNotBlank() && password != "Selecione parâmetros!") {
+                val clipboard = getSystemService(CLIPBOARD_SERVICE) as android.content.ClipboardManager
+                val clip = android.content.ClipData.newPlainText("password", password)
+                clipboard.setPrimaryClip(clip)
+                Toast.makeText(this, "Senha copiada!", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Nenhuma senha para copiar!", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // Salva senha em arquivo ao clicar em "SAVE PASSWORD"
         buttonSave.setOnClickListener {
             val password = textPassword.text.toString()
             if (password.isNotBlank() && password != "Selecione parâmetros!") {
