@@ -1,6 +1,7 @@
 package com.example.passwordgeneration
 
 import android.os.Bundle
+import android.os.Environment
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.SeekBar
@@ -11,6 +12,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import java.io.File
 import java.io.FileOutputStream
+import java.security.SecureRandom
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +35,6 @@ class MainActivity : AppCompatActivity() {
             findViewById<Switch>(R.id.switchEmoji) to "😀😁😂🤣😅😊😍😘😎🤩🥳😡😭😴😇🤔🙄😱😜🤪"
         )
 
-        // Atualiza contador ao mover SeekBar
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(sb: SeekBar?, progress: Int, fromUser: Boolean) {
                 val length = progress.coerceAtLeast(4)
@@ -48,16 +49,15 @@ class MainActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(sb: SeekBar?) {}
         })
 
-        // Gera senha ao clicar no botão Refresh
         buttonRefresh.setOnClickListener {
             textPassword.text = generatePassword(seekBar.progress, switches)
         }
 
-        // Copia a senha para área de transferência ao clicar no botão Copy
         buttonCopy.setOnClickListener {
             val password = textPassword.text.toString()
             if (password.isNotBlank() && password != "Selecione os parâmetros!") {
-                val clipboard = getSystemService(CLIPBOARD_SERVICE) as android.content.ClipboardManager
+                val clipboard =
+                    getSystemService(CLIPBOARD_SERVICE) as android.content.ClipboardManager
                 val clip = android.content.ClipData.newPlainText("password", password)
                 clipboard.setPrimaryClip(clip)
                 Toast.makeText(this, "Senha copiada!", Toast.LENGTH_SHORT).show()
@@ -66,38 +66,45 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        // Salva senha em arquivo ao clicar em "SAVE PASSWORD"
         buttonSave.setOnClickListener {
             val password = textPassword.text.toString()
             if (password.isNotBlank() && password != "Selecione os parâmetros!") {
-                savePasswordToFile(password)
-                val caminho = "/storage/Download/Senhas/senha.txt"
-                Toast.makeText(this, "Arquivo salvo em: " + caminho, Toast.LENGTH_LONG).show()
+
+                val downloadsDir =
+                    Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+                val folder = File(downloadsDir, "Senhas")
+                if (!folder.exists()) folder.mkdirs()
+
+                val file = File(folder, "senha.txt")
+                FileOutputStream(file, true).bufferedWriter().use { out ->
+                    out.appendLine(password)
+                }
+
+                Toast.makeText(this, "Arquivo salvo em: ${file.absolutePath}", Toast.LENGTH_LONG)
+                    .show()
+
             } else {
                 Toast.makeText(this, "Nenhuma senha para salvar!", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    // Função para gerar senha (corrigida para emojis)
         private fun generatePassword(length: Int, switches: List<Pair<Switch, String>>): String {
-            val pool = switches.filter { it.first.isChecked }
-                .flatMap { (_, chars) ->
-                    chars.codePoints().toArray().map { cp -> String(Character.toChars(cp)) }
+            val sets = switches.filter { it.first.isChecked }
+                .map { (_, chars) ->
+                    chars.codePoints().mapToObj { cp -> String(Character.toChars(cp)) }.toList()
                 }
 
+            if (sets.isEmpty()) return "Selecione os parâmetros!"
+
             val size = length.coerceAtLeast(4)
-            return if (pool.isNotEmpty()) {
-                (1..size).map { pool.random() }.joinToString("")
-            } else "Selecione os parâmetros!"
-        }
+            val secureRandom = SecureRandom()
 
+            val mandatory = sets.map { it[secureRandom.nextInt(it.size)] }
 
-    // Função para salvar senha em arquivo interno
-    private fun savePasswordToFile(password: String) {
-        val file = File(filesDir, "senha.txt")
-        FileOutputStream(file, true).bufferedWriter().use { out ->
-            out.appendLine(password)
+            val pool = sets.flatten()
+            val remaining = (mandatory.size until size).map { pool[secureRandom.nextInt(pool.size)] }
+
+            return (mandatory + remaining).shuffled(secureRandom).joinToString("")
         }
     }
-}
