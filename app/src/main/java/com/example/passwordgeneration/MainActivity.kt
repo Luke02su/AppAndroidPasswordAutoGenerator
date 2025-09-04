@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         // Copia a senha para área de transferência ao clicar no botão Copy
         buttonCopy.setOnClickListener {
             val password = textPassword.text.toString()
-            if (password.isNotBlank() && password != "Selecione parâmetros!") {
+            if (password.isNotBlank() && password != "Selecione os parâmetros!") {
                 val clipboard = getSystemService(CLIPBOARD_SERVICE) as android.content.ClipboardManager
                 val clip = android.content.ClipData.newPlainText("password", password)
                 clipboard.setPrimaryClip(clip)
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
         // Salva senha em arquivo ao clicar em "SAVE PASSWORD"
         buttonSave.setOnClickListener {
             val password = textPassword.text.toString()
-            if (password.isNotBlank() && password != "Selecione parâmetros!") {
+            if (password.isNotBlank() && password != "Selecione os parâmetros!") {
                 savePasswordToFile(password)
                 val caminho = "/storage/Download/Senhas/senha.txt"
                 Toast.makeText(this, "Arquivo salvo em: " + caminho, Toast.LENGTH_LONG).show()
@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
             val size = length.coerceAtLeast(4)
             return if (pool.isNotEmpty()) {
                 (1..size).map { pool.random() }.joinToString("")
-            } else "Selecione parâmetros antes de gerar senha!"
+            } else "Selecione os parâmetros!"
         }
 
 
