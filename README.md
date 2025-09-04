@@ -14,7 +14,7 @@ This Android app generates **secure and automatic passwords** based on user-sele
 
 ## App Layout 🎨
 <p align="center">
-   <img width="488" height="884" alt="image" src="https://github.com/user-attachments/assets/04e61f59-b45b-453b-88de-8133f658ad51" />
+   <img width="1222" height="2498" alt="Screenshot_20250904_002750" src="https://github.com/user-attachments/assets/abfa60b5-e13a-46a1-b042-80670a209c2c" />
 </p>
 
 ---
