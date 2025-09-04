@@ -36,7 +36,11 @@ This Android app generates **secure and automatic passwords** based on user-sele
 
 ---
 
-## Installation & Usage 🛠️
-1. Clone or download the project from GitHub:
-   ```bash
-   git clone https://github.com/Luke02su/password-generator.git
+<p align="center">
+
+```kotlin
+fun main() {
+    println("Code by Lucas Samuel!")
+    println("Welcome to the Password Auto Generator!")
+}
+
