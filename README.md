@@ -13,7 +13,7 @@ This Android app generates **secure, customizable passwords**. Users can select 
 ---
 
 ## App Layout 🎨
-![App Screenshot](path/to/screenshot.png)  
+<img width="488" height="884" alt="image" src="https://github.com/user-attachments/assets/04e61f59-b45b-453b-88de-8133f658ad51" />
 *Replace `path/to/screenshot.png` with your actual screenshot.*
 
 ---
