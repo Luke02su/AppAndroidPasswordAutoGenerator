@@ -8,13 +8,12 @@
 
 ## Project 🎯
 **Exercise 03 - Mobile Device Programming**  
-This Android app generates **secure, customizable passwords**. Users can select **security criteria** and copy the password to the clipboard with a single click.
+This Android app generates **secure and automatic passwords** based on user-selected **security criteria**. With a single click, users can **generate a password**, **copy it to the clipboard**, and **save it directly to a text file** for easy access and future use. The app supports letters, numbers, symbols, and even emojis, ensuring both **security** and **customization**.
 
 ---
 
 ## App Layout 🎨
-<img width="488" height="884" alt="image" src="https://github.com/user-attachments/assets/04e61f59-b45b-453b-88de-8133f658ad51" />
-*Replace `path/to/screenshot.png` with your actual screenshot.*
+<img width="488" align="center" height="884" alt="image" src="https://github.com/user-attachments/assets/04e61f59-b45b-453b-88de-8133f658ad51" />
 
 ---
 
