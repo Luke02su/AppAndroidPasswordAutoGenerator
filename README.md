@@ -39,4 +39,4 @@ This Android app generates **secure and automatic passwords** based on user-sele
 ## Installation & Usage 🛠️
 1. Clone or download the project from GitHub:
    ```bash
-   git clone https://github.com/username/password-generator.git
+   git clone https://github.com/Luke02su/password-generator.git
