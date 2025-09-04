@@ -36,8 +36,7 @@ This Android app generates **secure and automatic passwords** based on user-sele
 
 ---
 
-<p align="center">
-
+## Code Author 💻👨‍💻
 ```kotlin
 fun main() {
     println("Code by Lucas Samuel!")
