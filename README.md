@@ -14,7 +14,7 @@ This Android app generates **secure and automatic passwords** based on user-sele
 
 ## App Layout 🎨
 <p align="center">
-   img width="488" height="884" alt="image" src="https://github.com/user-attachments/assets/04e61f59-b45b-453b-88de-8133f658ad51" />
+   <img width="488" height="884" alt="image" src="https://github.com/user-attachments/assets/04e61f59-b45b-453b-88de-8133f658ad51" />
 </p>
 
 ---
@@ -24,6 +24,7 @@ This Android app generates **secure and automatic passwords** based on user-sele
 - Ensure **at least one character from each selected category**  
 - Use **SecureRandom** for cryptographic security  
 - **Copy to clipboard** with a single click  
+- **Save generated passwords to a text file**  
 - **Customizable password length**
 
 ---
