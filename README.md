@@ -20,19 +20,19 @@ This Android app generates **secure and automatic passwords** based on user-sele
 ---
 
 ## Features ✨
-- Generate passwords with **letters, numbers, symbols, and emojis**  
-- Ensure **at least one character from each selected category**  
-- Use **SecureRandom** for cryptographic security  
-- **Copy to clipboard** with a single click  
-- **Save generated passwords to a text file**  
-- **Customizable password length**
+- Generate passwords with **letters, numbers, symbols, and emojis**;
+- Ensure **at least one character from each selected category**;
+- Use **SecureRandom** for cryptographic security;
+- **Copy to clipboard** with a single click;  
+- **Save generated passwords to a text file**;  
+- **Customizable password length**.
 
 ---
 
 ## Technologies Used 🤖🍏
-- **Programming Language:** Kotlin  
-- **Development Environment:** Android Studio  
-- **Target Platform:** Android Mobile Devices  
+- **Programming Language:** Kotlin; 
+- **Development Environment:** Android Studio;  
+- **Target Platform:** Android Mobile Devices. 
 
 ---
 
@@ -42,4 +42,3 @@ fun main() {
     println("Code by Lucas Samuel!")
     println("Welcome to the Password Auto Generator!")
 }
-
